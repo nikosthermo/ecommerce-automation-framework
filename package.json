@@ -1,0 +1,26 @@
+{
+  "name": "ecommerce-automation-framework",
+  "version": "1.0.0",
+  "description": "## Overview This project is a test automation framework using WebDriverIO designed specifically for the e-commerce website at https://www.saucedemo.com/. It includes automated tests for various functionalities like authentication, product page validation, cart operations, checkout process, and navigation through the burger menu.",
+  "main": "index.js",
+  "directories": {
+    "test": "test/specs"
+  },
+  "scripts": {
+    "test": "wdio && allure generate allure-results --clean && allure open allure-report",
+    "wdio": "wdio run ./wdio.conf.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@testing-library/webdriverio": "^3.2.1",
+    "@wdio/allure-reporter": "^8.27.0",
+    "@wdio/cli": "^8.27.1",
+    "@wdio/local-runner": "^8.27.0",
+    "@wdio/mocha-framework": "^8.27.0",
+    "@wdio/spec-reporter": "^8.27.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
