@@ -3,6 +3,7 @@ class LoginPage {
     get passwordInput() { return $('#password'); }
     get loginButton() { return $('#login-button'); }
     get errorMessage() { return $(`//*[@id='login_button_container']//*[contains(@class, 'error-message')]`); }
+    get lockOutMessage() { return $(`too many attempts`); }
 
     async open() {
         await browser.url('https://www.saucedemo.com/');
@@ -32,6 +33,10 @@ class LoginPage {
     // Check if the error message is displayed on the page
     async isErrorDisplayed() {
         return this.errorMessage.isDisplayed();
+    }
+
+    async isLockedAccountDisplayed() {
+        return this.lockOutMessage.isDisplayed();
     }
 }
 
