@@ -7,7 +7,7 @@
     "test": "test/specs"
   },
   "scripts": {
-    "test": "wdio && allure generate allure-results --clean && allure open allure-report",
+    "test": "wdio ; allure generate allure-results --clean && allure open allure-report",
     "wdio": "wdio run ./wdio.conf.js"
   },
   "keywords": [],
