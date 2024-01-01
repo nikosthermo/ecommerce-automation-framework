@@ -11,8 +11,8 @@ This document describes the structure, architecture, and design patterns of our 
 - **`test/`**: Contains all test files and test data.
 - **`test/specs/`**: Contains all the test suites and test files for different features or components.
 - **`test/data/`**: Contains all test data.
-- **`pages/`**: PageObjects representing pages of the web application.
-- **`docs/`**: Contains documentation for the framework.
+- **`pages/`**: Contains Page Object Models for each page of the application.
+- **`docs/`**: Contains extensive documentation of the framework.
 - **`config/`**: Configuration files.
 - **`allure-report/`**: Destination for test execution reports.
 - **`allure-results/`**: Contains the raw data for the test execution reports.

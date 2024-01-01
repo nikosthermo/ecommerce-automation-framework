@@ -9,12 +9,17 @@ Before setting up the project, ensure you have the following installed:
 - NPM (Generally comes with Node.js - Latest Official Version 10.2.5)
 
 ## Framework Structure
-- `test/specs/` - Contains all the test scripts.
-- `pages/` - Contains Page Object Models for each page of the application.
-- `allure-report/` - Destination for test execution reports.
-- `allure-results/` - Contains the raw data for the test execution reports.
-- `wdio.conf.js` - The main configuration file for WebDriverIO.
-- `package.json` - Contains all the dependencies and scripts for the project.
+- **`test/`**: Contains all test files and test data.
+- **`test/specs/`**: Contains all the test suites and test files for different features or components.
+- **`test/data/`**: Contains all test data.
+- **`pages/`**: Contains Page Object Models for each page of the application.
+- **`docs/`**: Contains extensive documentation of the framework.
+- **`config/`**: Configuration files.
+- **`allure-report/`**: Destination for test execution reports.
+- **`allure-results/`**: Contains the raw data for the test execution reports.
+- **`wdio.conf.js`**: The main configuration file for WebDriverIO.
+- **`package.json`**: Contains all the dependencies and scripts for the project.
+- **`README.md`**: Contains instructions for setting up and running the framework.
 
 ## Setup Instructions
 1. **Clone the Repository:**
