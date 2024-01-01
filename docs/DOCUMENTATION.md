@@ -19,6 +19,8 @@ This document describes the structure, architecture, and design patterns of our 
 - **`wdio.conf.js`**: The main configuration file for WebDriverIO.
 - **`package.json`**: Contains all the dependencies and scripts for the project.
 - **`README.md`**: Contains instructions for setting up and running the framework.
+- **`.gitignore`**: Contains the files and directories that should be ignored by Git.
+- **`.github/workflows/`**: Contains the GitHub Actions workflow file for CI.
 
 ### Key Files and Their Purpose
 
@@ -54,6 +56,12 @@ This document describes the structure, architecture, and design patterns of our 
 
 - **Tools**: Configured with Allure to generate detailed and readable reports in the browser.
 - **Integration**: Reports are generated after each test run, providing insights into passed, failed, and skipped tests.
+
+## Continuous Integration
+
+- **CI Server**: Integrated with GitHub Actions.
+- **Pipeline**: The CI pipeline is configured to check out the code, run tests, and generate reports on every push or pull request.
+- **Artifacts**: The pipeline is configured to store the test execution reports as artifacts. To view the artifacts, click on the "Actions" tab in the repository and select the latest workflow run. Download the allure-artifacts zip file and extract it. To view the report, navigate to the extracted `allure-artifacts` directory and run the command `allure open allure-report`.
 
 ## Conclusion
 
