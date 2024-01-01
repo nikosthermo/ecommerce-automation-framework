@@ -13,7 +13,7 @@ class ProductsPage {
 
     // Open the Products page
     async open() {
-        await browser.url(`${config.baseUrl}/inventory.html`);
+        await browser.url(config.baseUrl + `/inventory.html`);
     }
 
     // Get the count of products displayed

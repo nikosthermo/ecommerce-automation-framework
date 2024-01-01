@@ -8,7 +8,7 @@ class LoginPage {
     get lockOutMessage() { return $(`too many attempts`); }
 
     async open() {
-        await browser.url(`${config.baseUrl}`);
+        await browser.url(config.baseUrl);
     }
 
     async login(username, password) {

@@ -24,6 +24,11 @@ const testData = {
             username: 'visual_user',
             password: 'secret_sauce',
         }
+    },
+    shippingInfo: {
+        firstName: 'Jane',
+        lastName: 'Doe',
+        zipCode: '12345',
     }
 };
 
