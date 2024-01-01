@@ -1,3 +1,6 @@
+// Determine if the tests are running in a CI environment
+const isCI = process.env.CI === 'true';
+
 exports.config = {
     //
     // ====================
@@ -50,7 +53,11 @@ exports.config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        browserName: 'chrome'
+        browserName: 'chrome',
+        'goog:chromeOptions': {
+            // Run in headless mode in CI; otherwise, open the browser normally
+            args: isCI ? ['--headless', '--disable-gpu', '--window-size=1280,800'] : []
+        }
     }],
 
     //
