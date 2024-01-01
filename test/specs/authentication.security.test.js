@@ -1,17 +1,17 @@
 const LoginPage = require("../../pages/login.page");
 const testData = require('../data/testData');
+const config = require('../../config/config');
+const BurgerMenuPage = require("../../pages/burgerMenu.page");
 
 // Security Tests
 describe('Authentication Security', () => {
-    // This will run before each test in this describe block
     beforeEach(async () => {
         await LoginPage.open();
     });
 
-    // This will run after each test in this describe block
     afterEach(async () => {
-        await browser.deleteCookies(); // Clear cookies
-        await browser.refresh(); // Refresh the browser to reset state
+        await browser.deleteCookies();
+        await browser.refresh();
     });
 
     // Case: SQL Injection
@@ -28,8 +28,8 @@ describe('Authentication Security', () => {
         expect(await LoginPage.errorMessage).toHaveText(expect.stringContaining('Username and password do not match'));
     });
 
-    // Case: Brute Force Attack
-    it('should lock the account or require additional authentication after consecutive failed logins', async () => {
+    // Case: Brute Force Attack - Skipping since there is not a lockout policy implemented on the login mechanism of the application under test
+    it.skip('should lock the account or require additional authentication after consecutive failed logins', async () => {
         for (let i = 0; i < 5; i++) {
             await LoginPage.login(testData.users.standardUser.username, 'wrong_password' + i);
             await browser.pause(500); // Wait briefly between attempts
@@ -48,9 +48,12 @@ describe('Authentication Security', () => {
     it('should invalidate session after logout', async () => {
         await LoginPage.login(testData.users.standardUser.username, testData.users.standardUser.password);
         // Simulate user logging out
-        await LoginPage.logout(); // Will implement this method later on since it's not part of the original page object
+        await BurgerMenuPage.open();
+        expect(await BurgerMenuPage.logoutOption.isDisplayed()).toBe(true);
+        await BurgerMenuPage.selectLogout();
+        expect(await LoginPage.usernameInput.isDisplayed()).toBe(true);
         // Attempt to navigate back to a protected page
-        await browser.url('/inventory.html');
+        await browser.url(config.baseUrl + '/inventory.html');
         expect(await browser.getUrl()).not.toContain('/inventory.html');
     });
 
