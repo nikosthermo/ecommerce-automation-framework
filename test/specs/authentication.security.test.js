@@ -1,4 +1,5 @@
 const LoginPage = require("../../pages/login.page");
+const testData = require('../data/testData');
 
 // Security Tests
 describe('Authentication Security', () => {
@@ -30,7 +31,7 @@ describe('Authentication Security', () => {
     // Case: Brute Force Attack
     it('should lock the account or require additional authentication after consecutive failed logins', async () => {
         for (let i = 0; i < 5; i++) {
-            await LoginPage.login('standard_user', 'wrong_password' + i);
+            await LoginPage.login(testData.users.standardUser.username, 'wrong_password' + i);
             await browser.pause(500); // Wait briefly between attempts
         }
         // Check for lockout message or additional security questions/CAPTCHA
@@ -45,7 +46,7 @@ describe('Authentication Security', () => {
 
     // Case: Session Management after Logout
     it('should invalidate session after logout', async () => {
-        await LoginPage.login('standard_user', 'secret_sauce');
+        await LoginPage.login(testData.users.standardUser.username, testData.users.standardUser.password);
         // Simulate user logging out
         await LoginPage.logout(); // Will implement this method later on since it's not part of the original page object
         // Attempt to navigate back to a protected page

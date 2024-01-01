@@ -1,4 +1,5 @@
 const LoginPage = require('../../pages/login.page');
+const testData = require('../data/testData');
 
 // Functional Tests
 describe('Authentication Functionality', () => {
@@ -15,7 +16,7 @@ describe('Authentication Functionality', () => {
 
     // Happy Path: Valid credentials
     it('should log in successfully with valid credentials', async () => {
-        await LoginPage.login('standard_user', 'secret_sauce');
+        await LoginPage.login(testData.users.standardUser.username, testData.users.standardUser.password);
         expect(await browser.getUrl()).toContain('/inventory.html');
         expect(await LoginPage.errorMessage).not.toBeDisplayed();
     });

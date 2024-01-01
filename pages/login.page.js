@@ -1,3 +1,5 @@
+const config = require('../config/config');
+
 class LoginPage {
     get usernameInput() { return $('#user-name'); }
     get passwordInput() { return $('#password'); }
@@ -6,7 +8,7 @@ class LoginPage {
     get lockOutMessage() { return $(`too many attempts`); }
 
     async open() {
-        await browser.url('https://www.saucedemo.com/');
+        await browser.url(`${config.baseUrl}`);
     }
 
     async login(username, password) {
