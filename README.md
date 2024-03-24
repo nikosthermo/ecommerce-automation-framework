@@ -1,7 +1,7 @@
 # WebDriverIO E-commerce Test Automation Framework
 
 ## Overview
-This project is a test automation framework using WebDriverIO designed specifically for the e-commerce website at https://www.saucedemo.com/. It includes automated tests for various functionalities like authentication, product page validation, cart operations, checkout process, and navigation through the burger menu.
+This project is a JavaScript test automation framework using WebDriverIO designed specifically for the e-commerce website at https://www.saucedemo.com/. It includes automated tests for various functionalities like authentication, product page validation, cart operations, checkout process, and navigation through the burger menu.
 
 ## Prerequisites
 Before setting up the project, ensure you have the following installed:
@@ -25,7 +25,7 @@ Before setting up the project, ensure you have the following installed:
 ## Setup Instructions
 1. **Clone the Repository:**
 - Clone the repository to your local machine using the following command:
-```git clone https://github.com/nikosthermo/ecommerce-automation-framework.git```
+```git clone https://github.com/nikosthermo/javascript-webdriverio-ecommerce-test-automation-framework.git```
 - Navigate to the project directory using the following command:
 ```cd ecommerce-automation-framework```
 2. **Install Dependencies:**
