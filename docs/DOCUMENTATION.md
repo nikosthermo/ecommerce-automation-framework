@@ -13,7 +13,6 @@ This document describes the structure, architecture, and design patterns of our 
 - **`test/data/`**: Contains all test data.
 - **`pages/`**: Contains Page Object Models for each page of the application.
 - **`docs/`**: Contains extensive documentation of the framework.
-- **`config/`**: Configuration files.
 - **`allure-report/`**: Destination for test execution reports.
 - **`allure-results/`**: Contains the raw data for the test execution reports.
 - **`wdio.conf.js`**: The main configuration file for WebDriverIO.

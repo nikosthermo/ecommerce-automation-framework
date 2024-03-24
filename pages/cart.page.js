@@ -1,11 +1,9 @@
-const config = require('../config/config');
-
 class CartPage {
     get cartItems() { return $$('.cart_item'); }
     get checkoutButton() { return $('#checkout'); }
 
     async open() {
-        await browser.url(config.baseUrl + '/cart.html');
+        await browser.url('/cart.html');
     }
 
     async getNumberOfItems() {

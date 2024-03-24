@@ -1,6 +1,5 @@
 const LoginPage = require("../../pages/login.page");
 const testData = require('../data/testData');
-const config = require('../../config/config');
 const BurgerMenuPage = require("../../pages/burgerMenu.page");
 
 // Security Tests
@@ -53,7 +52,7 @@ describe('Authentication Security', () => {
         await BurgerMenuPage.selectLogout();
         expect(await LoginPage.usernameInput.isDisplayed()).toBe(true);
         // Attempt to navigate back to a protected page
-        await browser.url(config.baseUrl + '/inventory.html');
+        await browser.url('/inventory.html');
         expect(await browser.getUrl()).not.toContain('/inventory.html');
     });
 
